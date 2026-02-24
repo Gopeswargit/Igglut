@@ -1,0 +1,26 @@
+{
+    "name": "Igglut 3D Engine Studio",
+    "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-22.04",
+    "postCreateCommand": "sudo apt-get update && sudo rm -f /etc/apt/sources.list.d/yarn.list && sudo apt-get install -y freeglut3-dev xvfb fluxbox x11vnc build-essential cmake gdb",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "twynat.cmake-format"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "files.autoSave": "afterDelay"
+            }
+        }
+    },
+    "forwardPorts": [5900],
+    "portsAttributes": {
+        "5900": {
+            "label": "VNC Display Server",
+            "onAutoForward": "notify"
+        }
+    }
+}
+
